@@ -12,3 +12,7 @@ df$InvoiceDate <- as.POSIXct(df$InvoiceDate, format = "%Y-%m-%d %H:%M:%S")
 df$`Customer ID`<- as.character(df$`Customer ID`)
 
 length(unique(df$Invoice))
+
+precmed<- df %>%
+  group_by(Invoice)%>%
+  summarise(prec_med= mean(Price))
