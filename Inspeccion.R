@@ -16,3 +16,14 @@ length(unique(df$Invoice))
 precmed<- df %>%
   group_by(Invoice)%>%
   summarise(prec_med= mean(Price))
+
+
+ProdxPed<- df %>%
+  group_by(Invoice)%>%
+  summarise(Productos=n())
+
+PrecXPed<- df %>%
+  group_by(Invoice)%>%
+  summarise(Precio=sum(Price))
+
+
